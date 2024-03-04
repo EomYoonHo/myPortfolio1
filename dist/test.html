@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+<h2>비행기 운행 시간표</h2>
+
+<table>
+  <tr>
+    <th>항공편</th>
+    <th>출발지</th> 
+    <th>도착지</th>
+    <th>출발 시간</th>
+    <th>도착 시간</th>
+  </tr>
+  <tr>
+    <td>KE123</td>
+    <td>서울</td>
+    <td>도쿄</td>
+    <td>08:00</td>
+    <td>11:00</td>
+  </tr>
+  <tr>
+    <td>JL456</td>
+    <td>도쿄</td>
+    <td>서울</td>
+    <td>15:00</td>
+    <td>18:00</td>
+  </tr>
+</table>
+<br><br><br>
+<table>
+  <tr>
+    <th>항공편</th>
+    <th>출발지</th> 
+    <th>도착지</th>
+    <th>출발 시간</th>
+    <th>도착 시간</th>
+  </tr>
+  <tr>
+    <td>KE123</td>
+    <td>서울</td>
+    <td>도쿄</td>
+    <td>08:00</td>
+    <td>11:00</td>
+  </tr>
+  <tr>
+    <td>JL456</td>
+    <td>도쿄</td>
+    <td>서울</td>
+    <td>15:00</td>
+    <td>18:00</td>
+  </tr>
+</table>
+<br><br><br>
+<table>
+  <tr>
+    <th>항공편</th>
+    <th>출발지</th> 
+    <th>도착지</th>
+    <th>출발 시간</th>
+    <th>도착 시간</th>
+  </tr>
+  <tr>
+    <td>KE123</td>
+    <td>서울</td>
+    <td>도쿄</td>
+    <td>08:00</td>
+    <td>11:00</td>
+  </tr>
+  <tr>
+    <td>JL456</td>
+    <td>도쿄</td>
+    <td>서울</td>
+    <td>15:00</td>
+    <td>18:00</td>
+  </tr>
+</table>
+
+<div class="row"><div class="cell air"><p class="air_name"><img src="https://image.hanatour.com/usr/static/img/airline/AF.png" title="" data-src="" alt="">
+  에어프랑스
+</p> <p class="txt">
+  AF0267
+  <span class="divider_dot">수하물포함</span></p></div> <div class="cell type"><div class="item_course"><span class="time">
+    11:45 
+    <span class="city">ICN</span></span> <span class="move_arrow"><p class="wait"><span class="tooltip text">
+        경유 1회
+        <span class="tooltiptext"><span>파리 샤를 드골 공항 경유 2시간 35분</span></span></span></p> <p class="load">18시간  55분</p></span> <span class="time">
+    22:40 
+    <!----> <span class="city">PRG</span></span></div></div> <div class="cell seat"><p>예약가능</p> <p class="txt">잔여 7석</p></div> <div class="cell pay"><p class="price">
+  1,213,300
+  <span>원~</span></p> <p class="card">
+  삼성카드/성인1인
+</p> <p class="button open_price">가격보기</p></div></div>
+
+<input type="number" id="id">
+
+</body>
+
+<script>
+      function formatNumber(num) {
+      return num.split('').reverse().join('').replace(/(\d{3})(?=\d)/g, '$1,').split('').reverse().join('');
+  }
+  
+ // 이 부분은 실제 HTML 요소의 ID를 넣어주세요.
+  
+  let element = document.getElementById("id");
+  let formattedValue = formatNumber(element.value);
+  console.log(formattedValue);
+</script>
+</html>

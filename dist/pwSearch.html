@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    
+  <meta charset="utf-8">
+    <title>CSS</title>
+    <link rel="stylesheet" href="./css/yonnho.css">
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Viking Tours</title>
+    <meta name="description" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+  <body>
+    <div class="jb-box">
+      
+      <video muted autoplay loop>
+        <source src="../video/ocean.mp4" type="video/mp4">
+      </video>
+      <div class="login-box">
+        <h2>비밀번호찾기</h2>
+        <h2 style="font-size: 20px;">Email 인증</h2>
+        <br>
+        <button class="get__number" onclick="takeTarget()">
+          인증번호
+        </button>
+        <form >
+          <div class="user-box"  style="width: 70%;">
+            <input type="email" name="" required="" placeholder="EMAIL 을 압력해주세요.">
+            <label>EMAIL</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="" required="" maxlength="10" style="width: 40%;">
+            <label>CERTIFICATION NUMBER</label> 
+            <span class="target__time" style="color: white; margin-left: 40%;">
+              <span id="remaining__min"><b>3</b></span><b> : </b>
+              <span id="remaining__sec"><b>00</b></span>
+            </span>
+            <div class="ddff">
+              <a href="pwUpdate.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                확인
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const remainingMin = document.getElementById("remaining__min");
+const remainingSec = document.getElementById("remaining__sec");
+const completeBtn = document.getElementById("complete");
+
+// 굳이 ms로 변경할 필요가 없다. 계산하기 더 불편하고 할 이유가 없다.
+// 항상 상황에 따라서 달라진다.
+
+let time = 180;
+const takeTarget = () => {
+  setInterval(function () {
+    if (time > 0) { // >= 0 으로하면 -1까지 출력된다.
+      time = time - 1; // 여기서 빼줘야 3분에서 3분 또 출력되지 않고, 바로 2분 59초로 넘어간다.
+      let min = Math.floor(time / 60);
+      let sec = String(time % 60).padStart(2, "0");
+      remainingMin.innerText = min;
+      remainingSec.innerText = sec;
+      // time = time - 1
+    } else {
+      completeBtn.disabled = true;
+    }
+  }, 1000);
+};
+</script>
